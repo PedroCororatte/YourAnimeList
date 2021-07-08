@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { SearchBar } from 'react-native-elements';
-import { View, Text, StatusBar} from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
 import Styles from './Styles';
 import { Alert } from 'react-native';
 import ModalAnime from './ModalAnime';
@@ -12,7 +12,7 @@ export default function App() {
   const [Data, setData] = useState([])
   const [userInput, setUserInput] = useState('fate')
   const [Visible, setVisible] = useState(false)
-
+  const [Target, setTarget] = useState()
   return (
     <View>
 
@@ -42,12 +42,19 @@ export default function App() {
         setLoading={setLoading}
         Data={Data}
         setData={setData}
+        setVisible={setVisible}
+        setTarget={setTarget}
       />
 
-      <ModalAnime
-        Visible={Visible}
-        setVisible={setVisible}
-      />
+      {
+        Target ?
+          <ModalAnime
+            Visible={Visible}
+            setVisible={setVisible}
+            Target={Target}
+          />
+          : <Text>ol</Text>
+       }
 
     </View>
   );

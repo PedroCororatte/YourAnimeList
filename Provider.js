@@ -1,8 +1,8 @@
-import React, { useEffect} from 'react'
+import React, { useEffect } from 'react'
 import Styles from './Styles';
-import { Image,ActivityIndicator,Text,View,FlatList } from 'react-native';
+import { Image, ActivityIndicator, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
-export default function ApiData({ userInput, Loading, setLoading, Data, setData }) {
+export default function ApiData({ userInput, Loading, setLoading, Data, setData, setVisible, setTarget }) {
     const link = 'https://api.jikan.moe/v3/search/anime?q='
 
     useEffect(
@@ -22,10 +22,16 @@ export default function ApiData({ userInput, Loading, setLoading, Data, setData 
                     <FlatList
                         data={Data}
                         numColumns={3}
+                        keyExtractor={item => item.mal_id}
                         renderItem={({ item }) => (
                             <View>
-                                <Image source={{ uri: item.image_url }} style={Styles.anime} />
-                                <Text style={{ color: '#fff', maxWidth: 100, textAlign: 'center' }}>{item.title}</Text>
+                                <TouchableOpacity onPress={() => {
+                                    setTarget(item)
+                                    setVisible(true)
+                                }}>
+                                    <Image source={{ uri: item.image_url }} style={Styles.anime} />
+                                    <Text style={{ color: '#fff', maxWidth: 100, textAlign: 'center' }}>{item.title}</Text>
+                                </TouchableOpacity>
                             </View>
                         )}
                     />
