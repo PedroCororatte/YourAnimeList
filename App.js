@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { SearchBar } from 'react-native-elements';
 import { View, Text, StatusBar } from 'react-native';
 import Styles from './Styles';
-import { Alert } from 'react-native';
 import ModalAnime from './ModalAnime';
-import Provider from './Provider'
+import Provider from './SearchProvider'
+import List from './AnimeList'
+import { ScrollView } from 'react-native';
 
 export default function App() {
 
-  const [Loading, setLoading] = useState(true)
   const [Data, setData] = useState([])
-  const [userInput, setUserInput] = useState('fate')
+  const [GenreList, setGenreList] = useState([])
+  const [userInput, setUserInput] = useState()
   const [Visible, setVisible] = useState(false)
   const [Target, setTarget] = useState()
+  let title = 'Yal'
+
   return (
     <View>
 
@@ -23,7 +26,7 @@ export default function App() {
 
       <View style={Styles.top}>
 
-        <Text style={Styles.title}>Yal</Text>
+        <Text style={Styles.title}>{title}</Text>
 
         <SearchBar
           searchIcon={{ size: 25 }}
@@ -36,15 +39,24 @@ export default function App() {
         />
       </View>
 
-      <Provider
-        userInput={userInput}
-        Loading={Loading}
-        setLoading={setLoading}
-        Data={Data}
-        setData={setData}
-        setVisible={setVisible}
-        setTarget={setTarget}
-      />
+      {
+        userInput ?
+          <Provider
+            userInput={userInput}
+            Data={Data}
+            setData={setData}
+            setVisible={setVisible}
+            setTarget={setTarget}
+          />
+          : <ScrollView>
+            <List
+              GenreList={GenreList}
+              setGenreList={setGenreList}
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+          </ScrollView>
+      }
 
       {
         Target ?
@@ -53,9 +65,9 @@ export default function App() {
             setVisible={setVisible}
             Target={Target}
           />
-          : <Text>ol</Text>
-       }
-
+          :
+          <View style={{backgroundColor:'#000'}}></View>
+      }
     </View>
   );
 }

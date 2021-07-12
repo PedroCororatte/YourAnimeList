@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, View, Text, Button, Image } from 'react-native'
+import { Modal, View, Text, Button, Image,ScrollView} from 'react-native'
 import Styles from './Styles'
 
 export default function ({ Visible, setVisible, Target }) {
@@ -13,9 +13,9 @@ export default function ({ Visible, setVisible, Target }) {
                     <Text style={Styles.modalTitle}>{Target.title}</Text>
                     <Image source={{ uri: Target.image_url }} style={Styles.modalImg}/>
                 </View>
-                <View>
+                <ScrollView >
                     <Text style={Styles.modalText}>{Target.synopsis}</Text>
-                </View>
+                </ScrollView>
                 <View>
                     <Button title="Close"
                         onPress={() => setVisible(false)}

@@ -53,7 +53,8 @@ export default StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     marginBottom : '10%',
-    maxWidth:'85%'
+    maxWidth:'85%',
+    maxHeight:'100%'
   },
   modalImg: {
     height: 250,
@@ -61,6 +62,10 @@ export default StyleSheet.create({
     margin: 10,
     marginTop:'5%',
     alignSelf:'center'
+  },
+  inSearch :{
+    fontSize : 16,
+    textAlign:'center'
   }
 });
 

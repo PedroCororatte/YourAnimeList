@@ -1,16 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import Styles from './Styles';
 import { Image, ActivityIndicator, Text, View, FlatList, TouchableOpacity } from 'react-native';
 
-export default function ApiData({ userInput, Loading, setLoading, Data, setData, setVisible, setTarget }) {
+export default function ApiData({ userInput, Data, setData, setVisible, setTarget }) {
+
     const link = 'https://api.jikan.moe/v3/search/anime?q='
+    const [Loading, setLoading] = useState(true)
 
     useEffect(
         () => {
             fetch(link + userInput)
                 .then((resp) => resp.json())
                 .then((json) => setData(json.results))
-                .catch(() => (alert('Erro ao carregar a lista')))
                 .finally(() => setLoading(false))
         }, [userInput]
     )
@@ -18,7 +19,7 @@ export default function ApiData({ userInput, Loading, setLoading, Data, setData,
     return (
         <View style={Styles.container}>
             {
-                Loading ? <ActivityIndicator /> : (
+                Loading ? <ActivityIndicator size='large' color='#7868E6' /> : (
                     <FlatList
                         data={Data}
                         numColumns={3}
