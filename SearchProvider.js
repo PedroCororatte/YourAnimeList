@@ -6,12 +6,13 @@ export default function ApiData({ userInput, Data, setData, setVisible, setTarge
 
     const link = 'https://api.jikan.moe/v3/search/anime?q='
     const [Loading, setLoading] = useState(true)
-
+    
     useEffect(
         () => {
             fetch(link + userInput)
                 .then((resp) => resp.json())
                 .then((json) => setData(json.results))
+                .catch(() => (Alert.alert('Error', 'Verify your connection')))
                 .finally(() => setLoading(false))
         }, [userInput]
     )

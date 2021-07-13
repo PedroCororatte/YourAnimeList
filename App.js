@@ -10,14 +10,13 @@ import { ScrollView } from 'react-native';
 export default function App() {
 
   const [Data, setData] = useState([])
-  const [GenreList, setGenreList] = useState([])
   const [userInput, setUserInput] = useState()
   const [Visible, setVisible] = useState(false)
   const [Target, setTarget] = useState()
   let title = 'Yal'
 
   return (
-    <View>
+    <ScrollView style={{backgroundColor:'#000'}} >
 
       <StatusBar
         barStyle="light-content"
@@ -48,14 +47,49 @@ export default function App() {
             setVisible={setVisible}
             setTarget={setTarget}
           />
-          : <ScrollView>
+          : 
+          <View>
             <List
-              GenreList={GenreList}
-              setGenreList={setGenreList}
               setTarget={setTarget}
               setVisible={setVisible}
             />
-          </ScrollView>
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+             <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+            <List
+              setTarget={setTarget}
+              setVisible={setVisible}
+            />
+          </View>
       }
 
       {
@@ -68,7 +102,7 @@ export default function App() {
           :
           <View style={{backgroundColor:'#000'}}></View>
       }
-    </View>
+    </ScrollView>
   );
 }
 

@@ -30,9 +30,14 @@ export default StyleSheet.create({
     borderTopColor: 'transparent'
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     color: '#E4FBFF',
     textAlign: 'center'
+  },
+  subtitle: {
+    fontSize: 20,
+    color: '#E4FBFF',
+    textAlign: 'left'
   },
   modalContainer: {
     backgroundColor: '#212121',
