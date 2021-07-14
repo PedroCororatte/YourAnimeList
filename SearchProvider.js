@@ -32,7 +32,8 @@ export default function ApiData({ userInput, Data, setData, setVisible, setTarge
                                     setVisible(true)
                                 }}>
                                     <Image source={{ uri: item.image_url }} style={Styles.anime} />
-                                    <Text style={{ color: '#fff', maxWidth: 100, textAlign: 'center' }}>{item.title}</Text>
+                                    <Text numberOfLines={2}
+                                    style={{ color: '#fff', maxWidth: 100, textAlign: 'center' }}>{item.title}</Text>
                                 </TouchableOpacity>
                             </View>
                         )}

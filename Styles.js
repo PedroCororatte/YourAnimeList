@@ -37,36 +37,51 @@ export default StyleSheet.create({
   subtitle: {
     fontSize: 20,
     color: '#E4FBFF',
-    textAlign: 'left'
+    textAlign: 'left',
+    paddingBottom:'5%'
+  },
+  Modaltop:{
+    flexDirection:'row',
+    justifyContent:'center',
+  },
+  modalBottom:{
+   alignContent:'center',
+   alignSelf:'center',
+   textAlign:'center'
   },
   modalContainer: {
     backgroundColor: '#212121',
-    alignItems: 'center',
     height: '100%',
     width: '100%',
-    alignSelf: 'center',
-    justifyContent: 'flex-start'
+    alignContent:'space-between',
   },
   modalTitle: {
+    justifyContent:'flex-start',
     color: '#fff',
-    fontSize: 28,
-    marginBottom : '5%',
-    marginTop:'5%',
+    fontSize: 20,
+    marginTop:'10%',
     textAlign:'center'
   },
   modalText: {
     color: '#fff',
     fontSize: 16,
     marginBottom : '10%',
-    maxWidth:'85%',
-    maxHeight:'100%'
+    maxWidth:'95%',
+    marginTop:'5%'
+  },
+  modalDetails:{
+    alignSelf:'flex-end',
+    flexDirection:'column',
+    alignItems:'center',
+    width:'50%',
+    height:'95%',
   },
   modalImg: {
+    alignContent:'flex-start',
     height: 250,
     width: 160,
-    margin: 10,
-    marginTop:'5%',
-    alignSelf:'center'
+    margin:'2%',
+    marginTop:'6%'
   },
   inSearch :{
     fontSize : 16,
