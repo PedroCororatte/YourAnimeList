@@ -1,4 +1,5 @@
 # YourAnimeList
 A app builded with React-Native and the Jikan api 
-
-![HomeScreen](https://github.com/PedroCororatte/YourAnimeList/blob/main/Homescreen.gif)
+<p align="center">
+  <img src="./Homescreen" width="350" title="Homescreen">
+</p>
