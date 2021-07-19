@@ -1,8 +1,16 @@
-# YourAnimeList
-<h1>A app builded with React-Native and the Jikan api</h1>
-<p align="center">Home
-  <img src="https://github.com/PedroCororatte/YourAnimeList/blob/main/Homescreen.gif" width="350" height="650" title="Homescreen">
-</p>
-<p align="center"> Search
-  <img src="https://github.com/PedroCororatte/YourAnimeList/blob/main/Search.gif" width="350" height="650" title="Homescreen">
-</p>
+# YourAnimeList 
+
+YourAnimeList (Yal) is a mobile app to help you find your favorite anime or to discover new anime!
+## 🛠️Builded with 
+
+* [React Native](https://github.com/facebook/react-native) 
+
+* [Expo](https://github.com/expo/expo)
+
+* [Jikan Api](https://github.com/jikan-me/jikan) 
+
+## 👀 Demonstration
+
+### HomeScreen
+
+<img src="https://github.com/PedroCororatte/YourAnimeList/blob/main/Homescreen.gif" width="350" height="650" title="Homescreen">
