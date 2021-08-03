@@ -1,7 +1,8 @@
+## 🚧 Under construction 🚧
 # YourAnimeList 
 
 YourAnimeList (Yal) is a mobile app to help you find your favorite anime or to discover new anime!
-    
+
 ## 🛠️Builded with 
 * [React Native](https://github.com/facebook/react-native) 
 
@@ -26,3 +27,4 @@ The app contains a search bar that can be used to find millions of animes!
  Here you will find more details about the chosen anime such as the score, number of episodes and synopsis
 
 <img src="https://github.com/PedroCororatte/YourAnimeList/blob/main/datail_02.jpg" width="300" height="600" title="Homescreen">
+
