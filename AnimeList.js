@@ -24,7 +24,6 @@ export default function AnimeList({ setTarget, setVisible }) {
     )
 
     return (
-
         <View style={{ backgroundColor: '#000000', marginTop: 20 }} horizontal>
             <Text style={Styles.subtitle}>{GenreName}</Text>
             {

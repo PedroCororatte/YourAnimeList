@@ -13,7 +13,9 @@ export default function App() {
   const [userInput, setUserInput] = useState()
   const [Visible, setVisible] = useState(false)
   const [Target, setTarget] = useState()
-  let title = 'Yal'
+  const [SearchValue,setSearchValue] = useState()
+
+  const title = 'Yal'
 
   return (
     <ScrollView style={{backgroundColor:'#000'}} >
@@ -28,6 +30,8 @@ export default function App() {
         <Text style={Styles.title}>{title}</Text>
 
         <SearchBar
+          returnKeyType='search'
+          multiline={false}
           searchIcon={{ size: 25 }}
           inputStyle={Styles.barInput}
           inputContainerStyle={Styles.barInput}
@@ -35,20 +39,14 @@ export default function App() {
           containerStyle={Styles.barContainer}
           onChangeText={(value) => setUserInput(value)}
           value={userInput}
+          onSubmitEditing={() => setSearchValue(userInput)}
+          onClear={()=> setSearchValue(null) }
         />
       </View>
-
+     
       {
-        userInput ?
-          <Provider
-            userInput={userInput}
-            Data={Data}
-            setData={setData}
-            setVisible={setVisible}
-            setTarget={setTarget}
-          />
-          : 
-          <View>
+       !SearchValue ?
+        <View>
             <List
               setTarget={setTarget}
               setVisible={setVisible}
@@ -90,8 +88,14 @@ export default function App() {
               setVisible={setVisible}
             />
           </View>
+          :  
+          <Provider 
+            Data={Data}
+            setData={setData} 
+            SearchValue={SearchValue}
+            setTarget={setTarget}
+            setVisible={setVisible}/>
       }
-
       {
         Target ?
           <ModalAnime
@@ -100,7 +104,8 @@ export default function App() {
             Target={Target}
           />
           :
-          <View style={{backgroundColor:'#000'}}></View>
+          <View style={{backgroundColor:'#000'}}>
+          </View>
       }
     </ScrollView>
   );

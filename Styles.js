@@ -57,13 +57,13 @@ export default StyleSheet.create({
   },
   modalTitle: {
     justifyContent:'flex-start',
-    color: '#fff',
+    color: '#E4FBFF',
     fontSize: 20,
     marginTop:'10%',
     textAlign:'center'
   },
   modalText: {
-    color: '#fff',
+    color: '#E4FBFF',
     fontSize: 16,
     marginBottom : '10%',
     maxWidth:'95%',
@@ -86,6 +86,43 @@ export default StyleSheet.create({
   inSearch :{
     fontSize : 16,
     textAlign:'center'
+  },
+  searchContainer:{
+    width:screen.width,
+    height:screen.height/6,
+    borderStyle:'solid',
+    borderBottomWidth:1,
+    borderColor:'#212121',
+    flexDirection:'row',
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  left:{
+    width:screen.width/3,
+    alignItems:'flex-start'
+  },
+  right:{
+    width:screen.width/2,
+    alignItems:'center',
+  },
+  details:{
+    flexDirection:'row-reverse',
+    height:100,
+    width:120,
+    alignItems:'center',
+    //backgroundColor:'red',
+  },
+  ep:{
+    flexDirection:'column',
+    width:50,
+    height:50,
+    alignItems:'center'
+  },
+  score:{
+    flexDirection:'column',
+    width:50,
+    height:50,
+    alignItems:'center'
   }
 });
 
