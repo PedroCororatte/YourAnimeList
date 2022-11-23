@@ -1,4 +1,3 @@
-## 🚧 Under construction 🚧
 # YourAnimeList 
 
 YourAnimeList (Yal) is a mobile app to help you find your favorite anime or to discover new anime!
